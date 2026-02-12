@@ -1,10 +1,11 @@
 """Tests for the main module."""
 import sys
 from io import StringIO
+from pathlib import Path
 from unittest.mock import patch
 
-# Import the module to test
-sys.path.insert(0, '/home/runner/work/MasterAndMargarita/MasterAndMargarita')
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import main
 
 
@@ -22,7 +23,6 @@ def test_main_prints_book_name():
 def test_main_function_exists():
     """Test that main function exists and is callable."""
     assert callable(main.main)
-    assert hasattr(main, 'main')
 
 
 def test_main_returns_none():
